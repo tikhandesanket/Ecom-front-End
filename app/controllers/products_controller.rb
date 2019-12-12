@@ -65,6 +65,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def add_to_cart
+    #binding.pry
+     ProductService.new.cart_line_item_list(params[:product_id])
+     redirect_to action: "index"
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

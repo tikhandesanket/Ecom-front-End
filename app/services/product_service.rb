@@ -24,8 +24,11 @@ class ProductService
     self.class.get("/products", @options)
   end
 
-  def cart_line_item_list
+  def cart_line_item_list(params_id)
     # self.class.get("/items", @options)
-    self.class.get("/carts", @options)
+
+
+    @options.merge!("product_id"=>params_id)
+    self.class.put("/carts", @options)
   end
 end

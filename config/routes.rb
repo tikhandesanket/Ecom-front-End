@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   #resources :users do
   #  resources :products
   #end
-  resources :products
+  resources :products  do
+    get :add_to_cart
+  end
 end
