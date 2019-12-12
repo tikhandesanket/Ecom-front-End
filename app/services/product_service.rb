@@ -28,7 +28,8 @@ class ProductService
     # self.class.get("/items", @options)
 
 
-    @options.merge!("product_id"=>params_id)
-    self.class.put("/carts", @options)
+    @options.merge!{:product_id=>params_id}
+
+    self.class.post("/carts", @options)
   end
 end
